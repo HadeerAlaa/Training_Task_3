@@ -70,7 +70,7 @@
     </TableRow>
    <SeekBar
        android:id="@+id/seekBar1"
-       android:max="10"
+       android:max="255"
        android:progressDrawable="@drawable/seek_progress"
        android:thumb="@drawable/seek_thumb"/>
 

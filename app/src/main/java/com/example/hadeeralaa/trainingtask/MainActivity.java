@@ -37,7 +37,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public  void onProgressChanged(SeekBar seekBar, int progresValue, boolean fromUser) {
                 progress = progresValue;
-                if(progress < 3)
+                red_box.setBackgroundColor(Color.argb(255, 200, progress, progress));
+                blue_box.setBackgroundColor(Color.argb(255, progress, progress, 200));
+               /* if(progress < 3)
                 {
                     red_box.setBackgroundColor(Color.parseColor("#cd3327"));
                     blue_box.setBackgroundColor(Color.parseColor("#005bcd"));
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     red_box.setBackgroundColor(Color.parseColor("#C8FAF9"));
                     blue_box.setBackgroundColor(Color.parseColor("#FBF9C8"));
-                }
+                }*/
             }
 
             @Override
@@ -96,7 +98,8 @@ public class MainActivity extends AppCompatActivity {
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
         alertDialogBuilder.setView(inflater.inflate(R.layout.dialog_style, null))
-        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+        .setPositiveButton("VISIT FORUMS", new DialogInterface.OnClickListener() {
+
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
                         Intent newIntent = new Intent(Intent.ACTION_VIEW);
@@ -108,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-        alertDialogBuilder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+        alertDialogBuilder.setNegativeButton("NOT NOW", new DialogInterface.OnClickListener() {
 
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
@@ -120,8 +123,8 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.setCanceledOnTouchOutside(false);
         alertDialog.show();
         // change cancel button name
-        alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE).setText("NOT NOW");
+/*        alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE).setText("NOT NOW");
         // change ok button name
-        alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setText("VISIT FORUMS");
+        alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setText("VISIT FORUMS");*/
     }
 }
